@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Zach's Page">
+	<div>
+        <header class="header">
+            <h1 class="name">Zach Herron</h1>
+            <a href="mailto:zach@herron.biz">zach@herron.biz</a>
+        </header>
+        <div>
+            <hr class="line">
+            <div class="content-inner">
+                <p>
+                    I love working on tricky problems with smart people.
+                </p>
+                <br>
+                <p>
+                    I have (some) skills in quantitative trading, 
+                    software engineering, and company-building,
+                    although I'm more of a generalist than I sometimes
+                    like to admit.
+                </p>
+                <br>
+                <p>
+                    Currently, I'm working on a new project in the quant trading space.
+                    Before that, I founded and led a quantitative hedge fund,
+                    and worked at worked at a large US market maker, a
+                    pre-seed fintech startup, and an investment bank.
+                </p>
+            </div>
+        </div>
+	</div>
+</Layout>
+
+<style>
+    .name {
+        font-size: 1.3rem;
+        font-weight: lighter;
+    }
+    .line {
+        min-width: 80vw;
+        margin-left: 0;
+    }
+    .header {
+        margin-top: 2rem;
+    }
+    .header > h1 {
+        margin-bottom: 0;
+    }
+    .header > a {
+        font-size: 0.88rem;
+    }
+    .content-inner {
+        margin-top: 2.35rem;
+        max-width: 500px;
+    }
+    .content-inner > p {
+        margin: 0;
+    }
+</style>

@@ -1,0 +1,90 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import ColorBox from '../components/ColorBox.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+	    <title>{title}</title>
+	</head>
+	<body>
+        <main>
+            <header>
+                <ColorBox></ColorBox>
+            </header>
+            <div class="content flex">
+                <div class="gutter"></div>
+                <slot />
+                <div class="gutter"></div>
+            </div>
+        </main>
+	</body>
+</html>
+
+<style is:global>
+    @font-face {
+        font-family: 'CMU Serif';
+        src: url('/cmunrm.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+	:root {
+        --bkg: #fcfcfc;
+        --text: #000000;
+        --link: #76A4F4;
+        --main: #ff7a00;
+        --c2: blue;
+        --c3: red;
+        --c4: rgb(0, 255, 0);
+
+        --fontsize: 1.18rem;
+	}
+	html {
+		font-family: 'CMU Serif', 'Times New Roman', serif;
+        font-weight: 100;
+        font-size: var(--fontsize);
+        color: var(--text);
+		background-color: var(--bkg);
+	}
+    body {
+        margin: 0;
+    }
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+    a {
+        color: var(--link);
+    }
+    .flex {
+        display: flex;
+    }
+    /* Tablets a big bois
+    */
+    @media screen and (min-width: 600px) {
+        .gutter {
+            min-width: 100px;
+        }
+
+    }
+    /* Phones and such
+    */
+    @media screen and (max-width: 600px) {
+        :root {
+            --fontsize: 1.1rem;
+        } 
+        .gutter {
+            display: none;
+        }
+    }
+</style>

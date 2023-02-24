@@ -1,0 +1,26 @@
+---
+const colors = [
+    '#ff7a00',
+    'blue',
+    'red',
+    '#00ff00',
+    '#dddcff',
+    '#d3d3d3',
+    '#454545',
+    '#151515',
+]
+---
+
+<div class="flex">
+    {colors.map(color => {
+        const bkg = `background-color: ${color}`;
+        return <div class="colorbox" style={bkg}></div>
+    })}
+</div>
+
+<style>
+    .colorbox {
+        height: 1rem;
+        width:  1rem;
+    }
+</style>
